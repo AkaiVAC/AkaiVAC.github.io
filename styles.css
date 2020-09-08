@@ -1,0 +1,211 @@
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"); */
+@import url("https://fonts.googleapis.com/css?family=Inria+Sans&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inria sans";
+	text-rendering: optimizeLegibility;
+}
+
+/* :root {
+	font-size: 16px;
+	--primary-color: #2bb3b1;
+	--secondary-color: #bfdf32;
+	--tertiary-color: #4abebd;
+	--bg-color: #f0f0f0;
+	--bg-color2: white;
+
+	--text-primary: var(--primary-color);
+	--text-secondary: var(--secondary-color);
+	--text-body: white;
+	--text-body2: gray;
+
+	--shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	--shadow2: 0 0 20px rgba(0, 0, 0, 0.25);
+} */
+
+:root {
+	font-size: 16px;
+	--primary-color: #4f4d91;
+	--secondary-color: #df32c8;
+	--tertiary-color: #626096;
+	--bg-color: #25244e;
+	--bg-color2: white;
+
+	--text-primary: var(--primary-color);
+	--text-secondary: var(--secondary-color);
+	--text-body: white;
+	--text-body2: gray;
+
+	--shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	--shadow2: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+	padding: 1rem;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	width: 60%;
+	max-width: 600px;
+	min-height: 350px;
+	background-color: var(--bg-color2);
+
+	border-radius: 10px;
+	box-shadow: var(--shadow);
+
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-areas:
+		"intro intro"
+		"price why";
+}
+
+section {
+	width: 100%;
+	height: 100%;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+section h1 {
+	color: var(--text-primary);
+	font-size: 1.3rem;
+	line-height: 2;
+	letter-spacing: 0.5px;
+}
+
+section h2 {
+	color: var(--text-secondary);
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+section p {
+	color: var(--text-body);
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+button {
+	color: var(--text-body);
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: capitalize;
+
+	width: 100%;
+	max-width: 200px;
+	margin-top: auto;
+	padding: 0.65rem 1rem;
+	background-color: var(--secondary-color);
+	border: none;
+	border-radius: 4px;
+	box-shadow: var(--shadow2);
+}
+
+button:hover {
+	filter: brightness(1.1);
+	cursor: pointer;
+}
+
+.intro {
+	grid-area: intro;
+}
+
+.intro h1 {
+	color: var(--primary-color);
+}
+
+.intro p {
+	color: var(--text-body2);
+}
+
+.pricing_info {
+	grid-area: price;
+	background-color: var(--primary-color);
+	border-bottom-left-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.pricing_info h1,
+.pricing_info h2 {
+	color: var(--text-body);
+}
+
+.pricing_info p {
+	margin-bottom: 1rem;
+}
+
+.pricing_info span {
+	font-size: 2rem;
+}
+
+.why_us {
+	grid-area: why;
+	background-color: var(--tertiary-color);
+	border-bottom-right-radius: 10px;
+}
+
+.why_us h2,
+.why_us li {
+	color: var(--text-body);
+	margin-bottom: 0.75rem;
+}
+
+.why_us ul {
+	list-style: none;
+}
+
+.why_us li {
+	font-size: 0.8rem;
+	margin-bottom: 0.4rem;
+}
+
+@media screen and (max-width: 720px) {
+	main {
+		width: 90%;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"intro"
+			"price"
+			"why";
+	}
+
+	section {
+		justify-content: center;
+		align-items: center;
+	}
+
+	section h1,
+	section h2,
+	section p,
+	section li {
+		text-align: center;
+	}
+
+	section h1,
+	section h2 {
+		line-height: 1.5;
+	}
+
+	.pricing_info {
+		border-bottom-left-radius: unset;
+	}
+
+	.why_us {
+		border-radius: 0 0 10px 10px;
+	}
+}
